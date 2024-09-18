@@ -1,0 +1,54 @@
+/* FormRegister.css */
+:root{
+  --backgroundImage: url('../img/logo.jpeg');
+}
+
+body{
+    background-image: var(--backgroundImage);
+    background-position: center;
+    background-repeat: no-repeat;
+ } 
+
+  .ctn-principal {
+    background-color: #eee6e6b9; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 8px rgba(28, 29, 28, 0.897);
+    width: 500px !important;
+    height: 450px;
+    margin-block-start: 4em; 
+  }
+  
+  .container h2  {
+    color: #3d3b3b;
+    font-size: 35px; 
+    
+  }
+  
+  .container form {
+    color: #ffffff; 
+    border-radius: 10px;
+    width: 380px;
+    margin-left: -70px;
+     
+}
+  .container button {
+    background-color: #f80909c2;
+    border: none;
+    margin-block-end: 1em;
+    width: 115px !important;
+    display: flex;
+    flex-direction: column;
+    margin-left: 125px;
+   
+}
+  
+.btn-primary:hover {
+    background-color: #1d1b1dab !important; 
+    border: none;
+}
+  .container Label{
+    color: black;
+    font-weight: 600;
+  }
+  

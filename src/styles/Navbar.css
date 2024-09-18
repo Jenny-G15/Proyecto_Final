@@ -1,0 +1,48 @@
+
+.custom-navbar {
+  background-color: #58e9fc; 
+  padding: 0.5rem 1rem; 
+}
+
+.custom-navbar .navbar-brand {
+  color: #ffffff; 
+  font-size: 1.5rem; 
+  font-weight: bold; 
+}
+
+.custom-navbar .navbar-toggler {
+  border-color: #ffffff; 
+}
+
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,..."); 
+}
+
+.custom-navbar .nav-link {
+  color: #ffffff;
+  font-size: 1rem; 
+  margin: 0 0.5rem; 
+}
+
+.custom-navbar .nav-link:hover {
+  color: #adb5bd; 
+}
+.custom-navbar .nav-dropdown .dropdown-menu {
+  background-color: #343a40; 
+  border: none; 
+}
+
+.custom-navbar .nav-dropdown .dropdown-item {
+  color: #ffffff;  
+}
+
+.custom-navbar .nav-dropdown .dropdown-item:hover {
+  background-color: #495057; 
+  color: #ffffff; 
+}
+
+.custom-navbar .nav-dropdown .dropdown-divider {
+  background-color: #495057; 
+}
+
+  
