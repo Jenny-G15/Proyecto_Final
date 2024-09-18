@@ -1,0 +1,13 @@
+.map-container {
+    height: 400px;
+    width: 100%; /* Make the map responsive */
+    max-width: 800px; /* Set a maximum width */
+    margin: 0 auto; /* Center the map */
+    border: 2px solid #ccc; /* Optional: Add a border */
+    border-radius: 8px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+  }
+  
+  .leaflet-container {
+    border-radius: 8px; /* Match map corners with container */
+  }

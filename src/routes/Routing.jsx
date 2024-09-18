@@ -3,6 +3,7 @@ import NariHome from '../pages/NariHome'
 import Register  from '../pages/Register';
 import Login from '../pages/Login';
 import AdminNari from '../pages/AdminNari';
+import Map from '../pages/Map';
 
 
 
@@ -15,6 +16,7 @@ const Routing = () => {
        <Route path="/" element={<Login />} />
        <Route path="/NariHome" element={<NariHome/>} /> 
        <Route path="/AdminNari" element={<AdminNari/>} /> 
+       <Route path="/Map" element={<Map/>} /> 
        <Route path="/Register" element={<Register/>} />
       
 
