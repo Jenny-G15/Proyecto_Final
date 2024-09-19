@@ -1,10 +1,10 @@
-async function PostProductos(image, name, price, description) {
+async function PostProductos(imagen, nombre, precio, descripcion) {
   try {
     const productData = {
-      image,
-      name,
-      price,
-      description
+      imagen,
+      nombre,
+      precio,
+      descripcion
     };
     console.log('Sending Product Data:', productData);
     

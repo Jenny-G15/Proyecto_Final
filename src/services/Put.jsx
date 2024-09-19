@@ -1,15 +1,16 @@
-export default updateProducto = async (id, nombre, descripcion, precio, imagen) => {
+const updateProducto = async (id, imagen, nombre, precio, descripcion) => {
     try {
-        const response = await fetch(`http://localhost:3000/products/${id}`, {
+        const response = await fetch(`http://localhost:3000/products/`+id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
+                id,
+                 imagen,
                  nombre,
-                 descripcion,
-                precio, 
-                imagen
+                 precio, 
+                 descripcion
             }),
         });
         if (!response.ok) {
@@ -21,3 +22,5 @@ export default updateProducto = async (id, nombre, descripcion, precio, imagen) 
         throw error;
     }
 };
+
+export default updateProducto

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; 
 import "../styles/home.css";
 import logo from '../img/logo.jpeg';
+import Mapa from './Mapa';
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -14,7 +15,7 @@ const Footer = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value  //investigar
     });
   };
 
@@ -44,7 +45,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" id='contacto'>
       <div className="footer-content">
         <div className="footer-logo">
           <img src={logo} alt="Logo de la empresa" />
@@ -87,6 +88,7 @@ const Footer = () => {
         <div className="footer-location">
           <h2>Ubicación</h2>
           <p>123 Calle Ficticia, Ciudad, País</p>
+          <Mapa/>
         </div>
         <div className="footer-social">
           <h2>Síguenos</h2>

@@ -1,4 +1,4 @@
-export default deleteProducto = async (id) => {
+const deleteProducto = async (id) => {
     try {
         const response = await fetch(`http://localhost:3000/products/${id}`, {
             method: 'DELETE',
@@ -11,3 +11,5 @@ export default deleteProducto = async (id) => {
         throw error;
     }
 };
+
+export default deleteProducto

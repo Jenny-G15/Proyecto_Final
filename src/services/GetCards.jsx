@@ -1,14 +1,22 @@
-async function GetCards() {
-    return new Promise (async(resolve,reject)=>{
-        let response= await fetch("http://localhost:3000/products");
-        if (response) {
-            let products=response.json();
-            return resolve(products)
-        }
-        else {
-            reject (new Error("Invalido"))
-        }
-    })
-}
+async function GetProductos() {
+    try {
+        const response = await fetch('http://localhost:3000/products', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
 
-export default GetCards;
+        if (!response.ok) {
+            throw new Error('Error fetching users');
+        }
+
+        const productos = await response.json();
+        return productos;
+    } catch (error) {
+        console.error('Error fetching users:', error);
+        throw error;
+    }
+}
+  
+  export default GetProductos

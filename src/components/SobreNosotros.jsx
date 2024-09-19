@@ -3,8 +3,8 @@ import React from 'react';
 
 const SobreNosotros = () => {
   return (
-    <section className="about-us">
-      <div className="container">
+    <section className="sobreNosotros" id='aboutUs'>
+      <div className="containerNosotros">
         <h2>Sobre Nosotros</h2>
         <p>
           En <strong>Nari Creaciones</strong>, somos apasionados por la innovación y la creatividad. Nos especializamos en 

@@ -12,7 +12,7 @@ const Mapa = () => {
     <MapContainer
       center={position}
       zoom={zoom}
-      style={{ border: 'solid 2px #ffffff', padding: '5px', height: "400px", width: "30%", marginLeft: "390px", marginBlockStart: "3em"}}
+      style={{ border: 'solid 2px #ffffff', padding: '5px', height: "200px", width: "100%"}}
     >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
