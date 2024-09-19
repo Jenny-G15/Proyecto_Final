@@ -3,6 +3,7 @@ import NavNari from '../components/NavNari'
 import Footer from '../components/Footer'
 
 
+
 export default function AdminNari() {
   return (
     <div> 
