@@ -1,157 +1,44 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Container } from 'react-bootstrap';
-import ave from "../img/ave.jpeg"
-import graduado from "../img/graduado.jpeg"
-import coneja from "../img/coneja.jpeg"
-import dino from "../img/dino.jpeg"
-import principito from "../img/principito.jpeg"
-import pug from "../img/pug.jpeg"
-import soporte from "../img/soporte.jpeg"
-import tabla from "../img/tabla.jpeg"
-import morty from "../img/morty.jpeg"
-import pika from "../img/pika.jpeg"
-import chorreador from "../img/chorreador.jpeg"
-import crepper from "../img/crepper.jpeg"
 import "../styles/home.css"
+import GetProductos from '../services/GetCards';
+import React, { useCallback,useEffect, useState } from 'react';
 
 function Productos() {
+
+
+  const [productos, setProductos] = useState([]);
+
+  const load_product=useCallback(()=>{
+    const fetchProducts = async () => {
+      try {
+        const response = await GetProductos();
+        setProductos(response);
+      } catch (error) {
+        console.error("Error fetching Products", error);
+      }
+    };
+    fetchProducts()
+   })
+  
+  useEffect(()=>load_product(),[load_product])
   return (
     <>
       <Container className='ctn-productos'>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={ave} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
 
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={graduado} />
+      {productos.map((product) => (
+        <Card key={product.id} style={{ width: '18rem' }}>
+          <Card.Img  src={product.imagen} alt={product.name} variant="top" />
           <Card.Body>
-            <Card.Title>Card Title</Card.Title>
+            <Card.Title>{product.nombre}</Card.Title>
             <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
+            {product.descripcion}
             </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
+            <Button variant="primary" className='w-100 d-block'>Agrear al carrito</Button>
           </Card.Body>
         </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={coneja} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={dino} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={principito} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={pug} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={soporte} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={tabla} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={morty} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={pika} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={chorreador} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-        <Card style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={crepper} />
-          <Card.Body>
-            <Card.Title>Card Title</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <Button variant="primary">Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
+      ))  }
       </Container>
     </>
   );

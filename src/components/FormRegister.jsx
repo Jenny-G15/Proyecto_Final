@@ -86,7 +86,7 @@ function FormRegister() {
                 />
               </Form.Group>
 
-              <Button  variant="primary" type="submit" className="w-100">Registrarse</Button>
+              <Button  variant="primary" type="submit" className="button-register">Registrarse</Button>
             </Form>
           </Col>
         </Row>

@@ -13,7 +13,6 @@ function Admin() {
   const [price, setPrice] = useState('');
   const [description, setDescription] = useState('');
   const [editando, setEditando] = useState(false);
-  const [cardEditada, setCardEditada] = useState({ image: '', name: '', price: '', description: '' });
   const [nombre, setnombre] = useState("");
   const [precio, setprecio] = useState("");
   const [descripcion, setdescripcion] = useState("");
@@ -31,16 +30,6 @@ function Admin() {
     }
   };
 
-  const editandoImagen = async (event) => {
-    const file = event.target.files[0];
-
-    if(file){
-      const base64Image = await convertToBase64(file);
-      setCardEditada(base64Image);
-    } else {
-      console.error('Error while editing to a new Base64');
-    }
-  };
 
 
   //useEffect que trae los productos del db.json, 
@@ -92,7 +81,6 @@ function Admin() {
       const response = await updateProducto(id,imagen,nombre,precio,descripcion);
       console.log(response);
       setEditando(false);
-      setCardEditada(null);
     } catch (error) {
       console.error('Error al editar', error);
     }
@@ -143,11 +131,6 @@ function Admin() {
       {editando && (
         <div className="formulario-edicion">
           <h3>Editar Producto</h3>
-          <input
-            type="file"
-            onChange={editandoImagen}
-            placeholder="Imagem"
-          />
           <input
             type="text"
             onChange={(e) => setnombre(e.target.value )}

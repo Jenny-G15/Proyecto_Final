@@ -4,6 +4,7 @@ import Register  from '../pages/Register';
 import Login from '../pages/Login';
 import AdminNari from '../pages/AdminNari';
 import Map from '../pages/Map';
+import SobreNosotrosPage from '../pages/SobreNosotros';
 
 
 
@@ -18,6 +19,8 @@ const Routing = () => {
        <Route path="/AdminNari" element={<AdminNari/>} /> 
        <Route path="/Map" element={<Map/>} /> 
        <Route path="/Register" element={<Register/>} />
+       <Route path="/SobreNosotros" element={<SobreNosotrosPage/>} />
+
       
 
       

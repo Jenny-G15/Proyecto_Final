@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com'; 
 import "../styles/home.css";
-import logo from '../img/logo.jpeg';
 import Mapa from './Mapa';
+import { FaFacebookSquare } from "react-icons/fa";
+import { FaInstagramSquare } from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Footer = () => {
   const [formData, setFormData] = useState({
@@ -47,9 +49,7 @@ const Footer = () => {
   return (
     <footer className="footer" id='contacto'>
       <div className="footer-content">
-        <div className="footer-logo">
-          <img src={logo} alt="Logo de la empresa" />
-        </div>
+        
         <div className="footer-contact">
           <h2>Contacto</h2>
           <form onSubmit={handleSubmit}>
@@ -87,12 +87,25 @@ const Footer = () => {
         </div>
         <div className="footer-location">
           <h2>Ubicación</h2>
-          <p>123 Calle Ficticia, Ciudad, País</p>
+          <p>123 Calle Arriba, Desamparados, Costa Rica</p>
           <Mapa/>
         </div>
         <div className="footer-social">
           <h2>Síguenos</h2>
           {/* Social media links */}
+          <a href="https://www.facebook.com/naricreacionescr?mibextid=JRoKGi" target='_blank' rel='noopener noreferrer' className='icon-p' id='Facebook'>
+              <FaFacebookSquare className='facebook-icon'/>
+              <span className='fa-icon-text'>Facebook</span>
+          </a>
+          <a href="https://www.instagram.com/naricreacionescr?igsh=dnhhZ2RqOWY0c250" target='_blank' rel='noopener noreferrer' className='icon-p' id='Instagram'>
+              <FaInstagramSquare className='Instagram-icon'/>
+              <span className='ins-icon-text'>Instagram</span>
+          </a>
+          <a href="https://wa.me/+50685302622" target='_blank' rel='noopener noreferrer' className='icon-p' id='Whatsapp'>
+              <FaWhatsapp className='Whatsapp-icon'/>
+              <span className='What-icon-text'>Whatsapp</span>
+          </a>
+          
         </div>
       </div>
       <div className="footer-bottom">

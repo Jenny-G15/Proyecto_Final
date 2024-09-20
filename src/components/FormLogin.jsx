@@ -60,7 +60,7 @@ export default function FormLogin() {
                 />
               </Form.Group>
 
-              <Button variant="primary" type="submit" className="w-100">
+              <Button variant="primary" type="submit" className="button-register">
                 Iniciar sesion
               </Button>
               <Link to="/register">

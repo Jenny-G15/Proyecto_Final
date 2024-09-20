@@ -32,7 +32,9 @@ body{
     margin-left: -70px;
      
 }
-  .container button {
+
+
+  .container .button-register {
     background-color: #f80909c2;
     border: none;
     margin-block-end: 1em;

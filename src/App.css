@@ -11,3 +11,16 @@
   .leaflet-container {
     border-radius: 8px; /* Match map corners with container */
   }
+
+  .btn-primary {
+    background-color: #f80909c2; /* Custom background color */
+    padding:10px ;
+    border: none;
+    color: white; /* Text color */
+  }
+  
+  .btn-primary:hover {
+    background-color: transparent; /* Transparent background on hover */
+    color: #ffffff; /* Change text color on hover */
+  }
+  
