@@ -5,6 +5,8 @@ import Login from '../pages/Login';
 import AdminNari from '../pages/AdminNari';
 import Map from '../pages/Map';
 import SobreNosotrosPage from '../pages/SobreNosotros';
+import RegisterAdmin from '../pages/AdminRegister';
+import LoginAdmin from '../pages/LoginAdmin';
 
 
 
@@ -20,13 +22,9 @@ const Routing = () => {
        <Route path="/Map" element={<Map/>} /> 
        <Route path="/Register" element={<Register/>} />
        <Route path="/SobreNosotros" element={<SobreNosotrosPage/>} />
-
-      
-
-      
-     
-     
-    
+       <Route path="/RegisterAdmin" element={<RegisterAdmin/>} />
+       <Route path="/LoginAdmin" element={<LoginAdmin/>} />
+  
      </Routes>
     </Router>
    );

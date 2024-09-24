@@ -1,0 +1,16 @@
+.mySwiper {
+    position: relative;
+    height: 470px;
+    width: 85% !important;
+
+  }
+  
+  .caption {
+    position: relative;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+
+  }
+  

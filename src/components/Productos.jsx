@@ -25,20 +25,22 @@ function Productos() {
   useEffect(()=>load_product(),[load_product])
   return (
     <>
-      <Container className='ctn-productos'>
-
+    <Container className='ctn-productos py-5'>
       {productos.map((product) => (
-        <Card key={product.id} style={{ width: '18rem' }}>
-          <Card.Img  src={product.imagen} alt={product.name} variant="top" />
-          <Card.Body>
-            <Card.Title>{product.nombre}</Card.Title>
-            <Card.Text>
-            {product.descripcion}
-            </Card.Text>
-            <Button variant="primary" className='w-100 d-block'>Agrear al carrito</Button>
-          </Card.Body>
-        </Card>
-      ))  }
+  <Card  key={product.id} className="productNari col-md-3">
+    <Card.Img src={product.imagen} alt={product.name} variant="top" />
+    <Card.Body>
+      <Card.Title>{product.nombre}</Card.Title>
+      <Card.Text className="price">
+        {product.precio}
+      </Card.Text>
+      <Card.Text className="description">
+        {product.descripcion}
+      </Card.Text>
+      <Button variant="primary" className='w-100 d-block add-to-cart-btn'>Agregar al carrito</Button>
+    </Card.Body>
+  </Card>
+))}
       </Container>
     </>
   );

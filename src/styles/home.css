@@ -1,21 +1,63 @@
+#narihome_container{
+  display: grid;
+  grid-template-rows: 100px 800px 1fr 1fr;
+}
+
+.carrussel{
+  grid-row: 1;
+}
+
 .ctn-productos {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
-  border: 1px dashed black;
   justify-content: center;
   width: 76% !important;
 }
-.card {
-  margin: 1rem; 
-  box-shadow: 0 4px 7px rgba(28, 29, 28, 0.897);
-  
+.productNari {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  overflow: hidden;
+  margin: 20px;
+  background: #ffffff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-.card-img-top {
-  object-fit: cover;
+
+.productNari:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
+
+.price {
+  font-size: 1.25rem;
+  color: #28a745; 
+  font-weight: bold;
+}
+
+.description {
+  color: #555; 
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.add-to-cart-btn {
+  background-color: #007bff; 
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3; 
+}
+
+
 .footer {
-  background-color: rgba(128, 128, 128, 0.7); 
+  background-image: url(../img/fondo.jpg); 
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 20px;
   display: flex;
   flex-direction: column;
@@ -117,46 +159,29 @@
     align-items: center; 
   }
 }
-
-
-.vertical-nav {
-  width: 250px;
-  width: 10%;
-  height: 95vh; 
-  background-color: #ff90b5de;
-  color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  padding: 20px 0;
+.carousel-item img {
+  filter: brightness(70%);
 }
 
-.nav-link {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s, color 0.3s;
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.nav-link:hover {
-  background-color: #575757;
-  color: #ddd;
+.carousel-caption h5 {
+  font-size: 2rem;
+  font-weight: bold;
 }
 
-.nav-link.active {
-  background-color: #575757;
-  color: #ddd;
+.carousel-caption p {
+  font-size: 1.2rem;
+  margin-top: 10px;
 }
 
-.nav-link.disabled {
-  color: #aaa;
-  pointer-events: none;
-}
-.containerCarrusel{
-  max-height: 200px !important;
-}
+
+
+

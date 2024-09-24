@@ -1,35 +1,38 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
-import getUsers from '../services/GetUsers';
-import { Link, useNavigate } from "react-router-dom";
+import getAdmin from '../services/GetAdmin';
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'; 
 
-export default function FormLogin() {
+function LoginAdmin() {
   const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
 
-  const loguearUsuario = async (event) => {
+  const [email, setEmail] = useState('');
+  const [codigo, setCodigo] = useState('');
+
+  const loguearAdmin = async (event) => {
     event.preventDefault();
 
     try {
-      let users = await getUsers();
-      let userExist = users.find((user) => user.email === email && user.password === password);
+      let admins = await getAdmin();
+      let adminExist = admins.find((admin) => admin.email === email 
+        && admin.codigo === codigo);
 
-      if (userExist) {
-        toast.success("¡Inicio de sesión exitoso!"); 
-        navigate("/NariHome");
+      if (adminExist) {
+        toast.success("¡Inicio de sesión exitoso!");
+        navigate("/AdminNari");
       } else {
-        toast.error("Email o contraseña incorrectos"); 
+        toast.error("Email o código incorrectos"); 
+        console.log("Email o código incorrectos");
       }
     } catch (error) {
       console.log("Fallo el try", error);
-      toast.error("Ocurrió un error al iniciar sesión"); 
+      toast.error("Error al intentar iniciar sesión. Inténtalo de nuevo."); 
     }
 
     console.log('Email:', email);
-    console.log('Password:', password);
+    console.log('Código:', codigo);
   };
 
   return (
@@ -38,34 +41,31 @@ export default function FormLogin() {
         <Row className="justify-content-md-center mt-5">
           <Col xs={12} md={6}>
             <h2 className="text-center mb-4">Login</h2>
-            <Form onSubmit={loguearUsuario}>
+            <Form onSubmit={loguearAdmin}>
               <Form.Group className="mb-3">
                 <Form.Label>Correo Electrónico</Form.Label>
                 <Form.Control
                   id="email"
                   type="email"
-                  placeholder="Enter email"
+                  placeholder="Ingrese email"
                   value={email}
                   onChange={(event) => setEmail(event.target.value)}
                 />
               </Form.Group>
 
               <Form.Group className="mb-3">
-                <Form.Label>Contraseña</Form.Label>
+                <Form.Label>Código</Form.Label>
                 <Form.Control
                   type="password"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(event) => setPassword(event.target.value)}
+                  placeholder="Ingrese código"
+                  value={codigo}
+                  onChange={(event) => setCodigo(event.target.value)}
                 />
               </Form.Group>
 
               <Button variant="primary" type="submit" className="button-register">
                 Iniciar sesión
               </Button>
-              <Link to="/register">
-                Registrate
-              </Link>
             </Form>
           </Col>
         </Row>
@@ -83,3 +83,5 @@ export default function FormLogin() {
     </div>
   );
 }
+
+export default LoginAdmin;

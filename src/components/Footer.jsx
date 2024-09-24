@@ -105,6 +105,9 @@ const Footer = () => {
               <FaWhatsapp className='Whatsapp-icon'/>
               <span className='What-icon-text'>Whatsapp</span>
           </a>
+          <p>Telefonos: +506 8530-2622 <br />
+             Correo: naricreaciones2020@gmail.com
+          </p>
           
         </div>
       </div>

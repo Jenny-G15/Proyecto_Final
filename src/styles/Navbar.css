@@ -1,26 +1,30 @@
 
 .custom-navbar {
-  background-color: #58e9fc; 
+  background-image: url("../img/fondo.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 0.5rem 1rem; 
+  height: 100px;
 }
 
 .custom-navbar .navbar-brand {
   color: #ffffff; 
-  font-size: 1.5rem; 
+  font-size: 30px !important;
   font-weight: bold; 
 }
 
 .custom-navbar .navbar-toggler {
-  border-color: #ffffff; 
+  border-color: #e7dbdb; 
 }
-
-.custom-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,..."); 
+.imgLogo{
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
 }
 
 .custom-navbar .nav-link {
-  color: #ffffff;
-  font-size: 1rem; 
+  color: #0f0f0f;
+  font-size: 20px; 
   margin: 0 0.5rem; 
 }
 
@@ -28,21 +32,15 @@
   color: #adb5bd; 
 }
 .custom-navbar .nav-dropdown .dropdown-menu {
-  background-color: #343a40; 
+  background-color: #fa63c8; 
   border: none; 
 }
 
 .custom-navbar .nav-dropdown .dropdown-item {
-  color: #ffffff;  
+  color: #080808;  
 }
-
-.custom-navbar .nav-dropdown .dropdown-item:hover {
-  background-color: #495057; 
-  color: #ffffff; 
-}
-
 .custom-navbar .nav-dropdown .dropdown-divider {
-  background-color: #495057; 
+  background-color: #ffffff; 
 }
 
   

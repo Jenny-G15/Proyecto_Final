@@ -1,26 +1,38 @@
 .map-container {
     height: 400px;
-    width: 100%; /* Make the map responsive */
-    max-width: 800px; /* Set a maximum width */
-    margin: 0 auto; /* Center the map */
-    border: 2px solid #ccc; /* Optional: Add a border */
-    border-radius: 8px; /* Optional: Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+    width: 100%; 
+    max-width: 800px; 
+    margin: 0 auto; 
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
   }
   
   .leaflet-container {
-    border-radius: 8px; /* Match map corners with container */
+    border-radius: 8px;
   }
 
   .btn-primary {
-    background-color: #f80909c2; /* Custom background color */
+    background-color: #f80909c2; 
     padding:10px ;
     border: none;
-    color: white; /* Text color */
+    color: white; 
   }
   
   .btn-primary:hover {
-    background-color: transparent; /* Transparent background on hover */
-    color: #ffffff; /* Change text color on hover */
+    background-color: transparent; 
+    color: #ffffff; 
   }
   
+
+  
+
+  .border-test{
+    border:1px dash blueviolet;
+  }
+
+  .product-slider{
+    max-height: 500px;
+    height: 500px;
+    overflow-y: hidden;
+  }

@@ -1,4 +1,4 @@
-import React, { useCallback,useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import convertToBase64 from '../controller/ConverToBase64';
 import PostProductos from '../services/PostCard';
 import "../styles/admin.css";
@@ -16,9 +16,9 @@ function Admin() {
   const [nombre, setnombre] = useState("");
   const [precio, setprecio] = useState("");
   const [descripcion, setdescripcion] = useState("");
-  const [id, setid] = useState("")
-  const [imagen, setimagen] = useState("")
- 
+  const [id, setid] = useState("");
+  const [imagen, setimagen] = useState("");
+
   const agregandoImagen = async (event) => {
     const file = event.target.files[0];
 
@@ -30,23 +30,20 @@ function Admin() {
     }
   };
 
+  const load_product = useCallback(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await GetProductos();
+        setProductos(response);
+      } catch (error) {
+        console.error("Error fetching Products", error);
+      }
+    };
+    fetchProducts();
+  }, []);
 
+  useEffect(() => load_product(), [load_product]);
 
-  //useEffect que trae los productos del db.json, 
-      const load_product=useCallback(()=>{
-       const fetchProducts = async () => {
-         try {
-           const response = await GetProductos();
-           setProductos(response);
-         } catch (error) {
-           console.error("Error fetching Products", error);
-         }
-       };
-       fetchProducts()
-      })
-     
-     useEffect(()=>load_product(),[load_product])
-     
   const addProduct = async (e) => {
     e.preventDefault();
 
@@ -56,6 +53,8 @@ function Admin() {
     } catch {
       console.error('Falla el post de productos');
     }
+
+    load_product()
   };
 
   const resetForm = () => {
@@ -65,36 +64,37 @@ function Admin() {
     setBaseImage(null);
   };
 
-
-
-  const empezarEdicion = (id,imagen) => {
-      setEditando(true);
-      setid(id)
-      setimagen(imagen)
-
+  const empezarEdicion = (id, imagen) => {
+    setEditando(true);
+    setid(id);
+    setimagen(imagen);
   };
 
-  const guardarEdicion = async (id,imagen,nombre,precio,descripcion) => {
-    console.log("id",id,"nombre".nombre,"precio",precio,"descripcion",descripcion);
-    
+  const guardarEdicion = async (id, imagen, nombre, precio, descripcion) => {
+    console.log("id", id, "nombre", nombre, "precio", precio, "descripcion", descripcion);
+
     try {
-      const response = await updateProducto(id,imagen,nombre,precio,descripcion);
+      const response = await updateProducto(id, imagen, nombre, precio, descripcion);
+      load_product();
       console.log(response);
       setEditando(false);
     } catch (error) {
       console.error('Error al editar', error);
     }
+    
   };
 
   const eliminarProducto = async (id) => {
     await deleteProducto(id);
+    load_product(); // Recargar productos después de eliminar
   };
 
   return (
-    <div>
-      <form onSubmit={addProduct}>
+    <div id="agregar-producto">
+      <form id="form-agregar-producto" onSubmit={addProduct}>
         <input
           type="file"
+          id="input-imagen"
           name="image"
           placeholder="Imagen (base64)"
           onChange={agregandoImagen}
@@ -102,6 +102,7 @@ function Admin() {
         />
         <input
           type="text"
+          id="input-nombre"
           name='nombre'
           placeholder="Nombre"
           value={name}
@@ -110,6 +111,7 @@ function Admin() {
         />
         <input
           type="text"
+          id="input-precio"
           name="price"
           placeholder="Precio"
           value={price}
@@ -118,48 +120,57 @@ function Admin() {
         />
         <input
           type="text"
+          id="input-descripcion"
           name="description"
           placeholder="Descripción"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
-        <button type="submit">Agregar producto</button>
-        <button type="button" onClick={resetForm}>Cancelar</button>
+        <div className="button-container">
+          <button type="submit" className="btn-agregar">Agregar producto</button>
+          <button type="button" className="btn-cancelar" onClick={resetForm}>Cancelar</button>
+        </div>
       </form>
 
       {editando && (
-        <div className="formulario-edicion">
+        <div id="editar-producto" className="formulario-edicion">
           <h3>Editar Producto</h3>
           <input
             type="text"
-            onChange={(e) => setnombre(e.target.value )}
+            onChange={(e) => setnombre(e.target.value)}
             placeholder="Nombre"
+            className="input-field"
           />
           <input
             type="text"
-            onChange={(e) => setprecio(e.target.value )}
+            onChange={(e) => setprecio(e.target.value)}
             placeholder="Precio"
+            className="input-field"
           />
           <input
             type="text"
-            onChange={(e) => setdescripcion(e.target.value )}
+            onChange={(e) => setdescripcion(e.target.value)}
             placeholder="Descripción"
+            className="input-field"
           />
-          <button onClick={()=>{guardarEdicion(id,imagen,nombre,precio,descripcion)}}>Guardar</button>
-          <button onClick={() => setEditando(false)}>Cancelar</button>
+          <div className="button-container">
+            <button className="btn guardar" 
+              onClick={() => guardarEdicion(id, imagen, nombre, precio, descripcion)}>Guardar</button>
+            <button className="btn cancelar" onClick={() => setEditando(false)}>Cancelar</button>
+          </div>
         </div>
       )}
 
       <div className="cardProducts">
         {producto.map((product) => (
           <div key={product.id} className="product-card">
-            <img src={product.imagen} alt={product.name} style={{ width: '100px', height: '100px' }} />
+            <img src={product.imagen} alt={product.nombre} style={{ width: '100px', height: '100px' }} />
             <h3>{product.nombre}</h3>
             <p>Precio: {product.precio}</p>
             <p>{product.descripcion}</p>
             <button onClick={() => eliminarProducto(product.id)}>Eliminar</button>
-            <button onClick={() => empezarEdicion(product.id,product.imagen)}>Editar</button>
+            <button onClick={() => empezarEdicion(product.id, product.imagen)}>Editar</button>
           </div>
         ))}
       </div>
@@ -167,4 +178,4 @@ function Admin() {
   );
 }
 
-export default Admin
+export default Admin;

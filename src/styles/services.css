@@ -1,0 +1,18 @@
+.services-container {
+    background-color: aliceblue;
+    padding: 40px 0;
+    margin-block-end: 3em;
+    border-radius: 10px;
+    border: 1px solid rgba(194, 183, 183, 0.808);
+    box-shadow: 3px 4px 5px  rgba(44, 42, 42, 0.808);;
+  }
+  
+  .services-container h2 {
+    margin-bottom: 30px;
+  }
+  
+  .cardServices {
+    text-align: center;
+    background-color: rgba(253, 33, 70, 0.288);
+  }
+  
