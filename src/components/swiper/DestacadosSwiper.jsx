@@ -8,7 +8,9 @@ import "swiper/swiper-bundle.css";
 import './DestacadosSwiper.css';
 
 function Destacados() {
-  return (
+  return ( 
+
+  
     
     <Swiper
       modules={[Navigation, Pagination, Autoplay]}
@@ -21,16 +23,19 @@ function Destacados() {
       className="mySwiper"
     >
       <SwiperSlide>
+        <h2>Productos Destacados</h2>
         <img className="d-block w-100" src={nari1} alt="First slide" />
         <div className="caption">
         </div>
       </SwiperSlide>
       <SwiperSlide>
+      <h2>Productos Destacados</h2>
         <img className="d-block w-100" src={nari2} alt="Second slide" />
         <div className="caption">
         </div>
       </SwiperSlide>
       <SwiperSlide>
+      <h2>Productos Destacados</h2>
         <img className="d-block w-100" src={nari3} alt="Third slide" />
         <div className="caption">
         </div>
