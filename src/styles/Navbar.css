@@ -44,8 +44,171 @@
 .custom-navbar .nav-dropdown .dropdown-divider {
   background-color: #ffffff; 
 }
+.containerSearch {
+  display: flex;
+  align-items: center;
+  margin-left: auto; 
+}
+
+.inputSearch {
+  border: 2px solid #fd26fd; 
+  border-radius: 25px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  transition: border-color 0.3s; 
+  outline: none; 
+  width: 250px; 
+}
+
+.inputSearch:focus {
+  border-color: #ec21cb; 
+}
+.buttonSearch {
+  background-color: #fc0f5ef1; 
+  color: white; 
+  border: none; 
+  border-radius: 25px; 
+  padding: 10px 20px; 
+  font-size: 16px; 
+  margin-left: 10px; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
+}
+
+.buttonSearch:hover {
+  background-color: #0056b3; 
+}
+.buttonSearch:active {
+  background-color: #004085; 
+}
+.modal-header {
+  background-color: #fd42bf; 
+  color: white; 
+  border-bottom: 2px solid #f117a9; 
+}
+
+.modal-title {
+  font-weight: bold; 
+}
+
+.modal-body {
+  background-color: #f8f9fa; 
+}
+
+.card {
+  border: none; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  transition: transform 0.2s; 
+}
+
+.card:hover {
+  transform: scale(1.02); 
+}
+
+.card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+.card-title {
+  font-size: 1.25rem; 
+  color: #333;
+}
+
+.card-text {
+  color: #666; 
+}
+
+.modal-footer {
+  background-color: #78def8; 
+  border-top: 2px solid #dee2e6; 
+}
+
+.button-secondary {
+  background-color: #6c757d; 
+  border: none; 
+  border-radius: 25px; 
+  transition: background-color 0.3s; 
+}
+
+.button-secondary:hover {
+  background-color: #5a6268; 
+}
 
 /* Media Queries */
+@media (max-width: 768px) {
+  .modal-header {
+    font-size: 1.2rem;
+  }
+
+  .card-title {
+    font-size: 1.1rem; 
+  }
+
+  .card-text {
+    font-size: 0.9rem; 
+  }
+
+  .button-secondary {
+    font-size: 0.9rem; 
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-header {
+    text-align: center; 
+  }
+
+  .modal-title {
+    font-size: 1.5rem; 
+  }
+
+  .modal-body {
+    padding: 10px; 
+  }
+
+  .card {
+    margin-bottom: 15px; 
+  }
+
+  .button-secondary {
+    width: 100%; 
+    margin-top: 10px; 
+  }
+}
+
+
+/* Media Queries filtro */
+@media (max-width: 768px) {
+  .inputSearch {
+    width: 180px; 
+    font-size: 14px; 
+    padding: 8px 15px; 
+  }
+
+  .buttonSearch {
+    padding: 8px 15px;
+    font-size: 14px; 
+  }
+}
+
+@media (max-width: 576px) {
+  .inputSearch {
+    width: 150px; 
+  }
+
+  .containerSearch {
+    flex-direction: column; 
+    align-items: flex-start; 
+    margin: 10px 0; 
+  }
+  .buttonSearch {
+    margin-left: 0;
+    margin-top: 5px; 
+  }
+}
+
+
+/* Media Queries navbar */
 @media (max-width: 768px) {
   .custom-navbar {
       height: 80px; 
