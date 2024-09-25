@@ -1,4 +1,3 @@
-
 .custom-navbar {
   background-image: url("../img/fondo.jpg");
   background-repeat: no-repeat;
@@ -16,7 +15,8 @@
 .custom-navbar .navbar-toggler {
   border-color: #e7dbdb; 
 }
-.imgLogo{
+
+.imgLogo {
   width: 90px;
   height: 90px;
   border-radius: 100%;
@@ -31,6 +31,7 @@
 .custom-navbar .nav-link:hover {
   color: #adb5bd; 
 }
+
 .custom-navbar .nav-dropdown .dropdown-menu {
   background-color: #fa63c8; 
   border: none; 
@@ -39,8 +40,46 @@
 .custom-navbar .nav-dropdown .dropdown-item {
   color: #080808;  
 }
+
 .custom-navbar .nav-dropdown .dropdown-divider {
   background-color: #ffffff; 
 }
 
-  
+/* Media Queries */
+@media (max-width: 768px) {
+  .custom-navbar {
+      height: 80px; 
+  }
+
+  .custom-navbar .navbar-brand {
+      font-size: 24px; 
+  }
+
+  .custom-navbar .nav-link {
+      font-size: 18px; 
+  }
+
+  .imgLogo {
+      width: 70px; 
+      height: 70px; 
+  }
+}
+
+@media (max-width: 480px) {
+  .custom-navbar {
+      padding: 0.5rem; 
+  }
+
+  .custom-navbar .navbar-brand {
+      font-size: 20px; 
+  }
+
+  .custom-navbar .nav-link {
+      font-size: 16px; 
+  }
+
+  .imgLogo {
+      width: 60px; 
+      height: 60px; 
+  }
+}

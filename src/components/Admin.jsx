@@ -89,6 +89,9 @@ function Admin() {
     load_product(); // Recargar productos después de eliminar
   };
 
+  console.log(producto);
+  
+
   return (
     <div id="agregar-producto">
       <form id="form-agregar-producto" onSubmit={addProduct}>
@@ -164,7 +167,7 @@ function Admin() {
 
       <div className="cardProducts">
         {producto.map((product) => (
-          <div key={product.id} className="product-card">
+          <div key={product.id} className="product-card ">
             <img src={product.imagen} alt={product.nombre} style={{ width: '100px', height: '100px' }} />
             <h3>{product.nombre}</h3>
             <p>Precio: {product.precio}</p>

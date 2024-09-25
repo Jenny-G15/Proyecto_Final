@@ -1,161 +1,212 @@
 .cardProducts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px,));
-    gap: 20px;
-    box-shadow: 2px 4px 7px rgb(15, 15, 15);
-  }
-  
-  .product-card {
-    border: 1px solid #635f5faf;
-    background-color: #f1efebc7;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    margin: 1rem; 
-    box-shadow: 2px 4px 7px rgb(15, 15, 15);
-  }
-  
-  .product-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-  }
-  #editar-producto {
-    background-color: #fcbcdf; 
-    border-radius: 8px;
-    padding: 20px; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    max-width: 400px; 
-    margin: auto; 
-    margin-block-end: 1em;
-  }
-  
-  #editar-producto h3 {
-    text-align: center; 
-    color: #343a40; 
-    margin-bottom: 20px; 
-  }
-  
-  #editar-producto .input-field {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 15px; 
-    border: 1px solid #5fe0e9; 
-    border-radius: 4px; 
-    font-size: 16px; 
-  }
-  
-  #editar-producto .input-field:focus {
-    border-color: #007bff; 
-    box-shadow: 0 0 5px rgba(20, 20, 20, 0.5); 
-    outline: none; 
-  }
-  
-  #editar-producto .button-container {
-    display: flex; 
-    justify-content: space-between; 
-  }
-  
-  #editar-producto .btn {
-    padding: 10px 15px; 
-    border: none; 
-    border-radius: 4px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    transition: background-color 0.3s; 
-  }
-  
-  #editar-producto .guardar {
-    background-color: #73f8d7; 
-    color: rgb(0, 0, 0); 
-  }
-  
-  #editar-producto .guardar:hover {
-    background-color: #e9e5df; 
-  }
-  
-  #editar-producto .cancelar {
-    background-color: #f12a87; 
-    color: white; 
-  }
-  
-  #editar-producto .cancelar:hover {
-    background-color: #2c2a2ac7; 
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px,));
+  gap: 20px;
+  box-shadow: 2px 4px 7px rgb(15, 15, 15);
+}
+
+.product-card {
+  border: 1px solid #635f5faf;
+  background-color: #f1efebc7;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 1em; 
+  box-shadow: 2px 4px 7px rgb(15, 15, 15);
+  margin-block-end: 2em;
+}
+
+.product-card img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+#editar-producto {
+  background-color: #fcbcdf; 
+  border-radius: 8px;
+  padding: 20px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+  max-width: 400px; 
+  margin: auto; 
+  margin-block-end: 1em;
+}
+
+#editar-producto h3 {
+  text-align: center; 
+  color: #343a40; 
+  margin-bottom: 20px; 
+}
+
+#editar-producto .input-field {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 15px; 
+  border: 1px solid #5fe0e9; 
+  border-radius: 4px; 
+  font-size: 16px; 
+}
+
+#editar-producto .input-field:focus {
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(20, 20, 20, 0.5); 
+  outline: none; 
+}
+
+#editar-producto .button-container {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+#editar-producto .btn {
+  padding: 10px 15px; 
+  border: none; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  transition: background-color 0.3s; 
+}
+
+#editar-producto .guardar {
+  background-color: #73f8d7; 
+  color: rgb(0, 0, 0); 
+}
+
+#editar-producto .guardar:hover {
+  background-color: #e9e5df; 
+}
+
+#editar-producto .cancelar {
+  background-color: #f12a87; 
+  color: white; 
+}
+
+#editar-producto .cancelar:hover {
+  background-color: #2c2a2ac7; 
+}
+
+#agregar-producto {
+  background-color: #aba5fd96; 
+  border-radius: 10px; 
+  padding: 30px; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.726);
+  max-width: 900px; 
+  margin: auto; 
+  margin-block-start: 2em;
+  margin-block-end: 3em;
+}
+
+#form-agregar-producto h2 {
+  text-align: center; 
+  color: #343a40; 
+  margin-bottom: 20px; 
+}
+
+#input-imagen, 
+#input-nombre, 
+#input-precio, 
+#input-descripcion {
+  width: 100%; 
+  padding: 10px; 
+  margin-bottom: 20px;
+  border: 1px solid #85878a88; 
+  border-radius: 5px; 
+  font-size: 16px; 
+}
+
+#input-imagen {
+  padding: 5px; 
+}
+
+#input-nombre:focus, 
+#input-precio:focus, 
+#input-descripcion:focus, 
+#input-imagen:focus {
+  border-color: #007bff; 
+  box-shadow: 1px 2px 5px rgba(0, 123, 255, 0.5); 
+  outline: none; 
+}
+
+.button-container {
+  display: flex; 
+  justify-content: space-between; 
+}
+
+.btn-agregar {
+  padding: 7px 15px; 
+  border: 1px solid rgba(153, 149, 149, 0.438); 
+  border-radius: 3px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  background-color:  #73f8d7;
+  color: rgb(34, 33, 33); 
+  margin-block-end: 1em;
+}
+
+.btn-agregar:hover {
+  background-color: #ffffffb2; 
+}
+
+.btn-cancelar {
+  padding: 7px 15px; 
+  border: 1px solid rgba(153, 149, 149, 0.438); 
+  border-radius: 3px; 
+  cursor: pointer; 
+  font-size: 16px; 
+  background-color:  #fd57be;
+  color: rgb(252, 248, 248); 
+  margin-block-end: 1em;
+}
+
+.btn-cancelar:hover {
+  background-color: #423e3ec0; 
+}
+
+/* Media Queries */
+@media (max-width: 900px) {
   #agregar-producto {
-    background-color: #aba5fd96; 
-    border-radius: 10px; 
-    padding: 30px; 
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.726);
-    max-width: 900px; 
-    margin: auto; 
-    margin-block-start: 2em;
-    margin-block-end: 3em;
+      padding: 20px;
   }
   
-  #form-agregar-producto h2 {
-    text-align: center; 
-    color: #343a40; 
-    margin-bottom: 20px; 
+  #editar-producto {
+      padding: 15px;
   }
-  
-  #input-imagen, 
-  #input-nombre, 
-  #input-precio, 
-  #input-descripcion {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 20px;
-    border: 1px solid #85878a88; 
-    border-radius: 5px; 
-    font-size: 16px; 
+
+  .product-card img {
+      width: 80px;
+      height: 80px;
   }
-  
-  #input-imagen {
-    padding: 5px; 
+
+  .btn, .btn-agregar, .btn-cancelar {
+      font-size: 14px;
   }
-  
-  #input-nombre:focus, 
-  #input-precio:focus, 
-  #input-descripcion:focus, 
-  #input-imagen:focus {
-    border-color: #007bff; /
-    box-shadow: 1px 2px 5px rgba(0, 123, 255, 0.5); 
-    outline: none; 
+}
+
+@media (max-width: 600px) {
+  .cardProducts {
+      grid-template-columns: repeat(2, 1fr);
   }
-  
-  .button-container {
-    display: flex; 
-    justify-content: space-between; 
+
+  #agregar-producto, #editar-producto {
+      max-width: 100%;
   }
-  
-  .btn-agregar {
-    padding: 7px 15px; 
-    border: 1px solid rgba(153, 149, 149, 0.438); 
-    border-radius: 3px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    background-color:  #73f8d7;
-    color: rgb(34, 33, 33); 
-    margin-block-end: 1em;
+
+  .product-card {
+      margin: 0.5em;
   }
-  
-  .btn-agregar:hover {
-    background-color: #ffffffb2; 
+}
+
+@media (max-width: 400px) {
+  .cardProducts {
+      grid-template-columns: 1fr;
   }
-  
-  .btn-cancelar {
-    padding: 7px 15px; 
-    border: 1px solid rgba(153, 149, 149, 0.438); 
-    border-radius: 3px; 
-    cursor: pointer; 
-    font-size: 16px; 
-    background-color:  #fd57be;
-    color: rgb(252, 248, 248); 
-    margin-block-end: 1em;
+
+  #input-nombre, #input-precio, #input-descripcion, #input-imagen {
+      font-size: 14px;
+      padding: 8px;
   }
-  
-  .btn-cancelar:hover {
-    background-color: #423e3ec0; 
+
+  #editar-producto h3, #form-agregar-producto h2 {
+      font-size: 18px;
   }
-  
+}

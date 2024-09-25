@@ -1,9 +1,9 @@
-#narihome_container{
+#narihome_container {
   display: grid;
   grid-template-rows: 100px 800px 1fr 1fr;
 }
 
-.carrussel{
+.carrussel {
   grid-row: 1;
 }
 
@@ -14,6 +14,7 @@
   justify-content: center;
   width: 76% !important;
 }
+
 .productNari {
   border: 1px solid #ddd;
   border-radius: 10px;
@@ -52,7 +53,6 @@
 .add-to-cart-btn:hover {
   background-color: #0056b3; 
 }
-
 
 .footer {
   background-image: url(../img/fondo.jpg); 
@@ -153,12 +153,6 @@
   font-size: 12px; 
 }
 
-@media (max-width: 768px) {
-  .footer-content {
-    flex-direction: column;
-    align-items: center; 
-  }
-}
 .carousel-item img {
   filter: brightness(70%);
 }
@@ -182,6 +176,55 @@
   margin-top: 10px;
 }
 
+/* Media Queries */
+@media (max-width: 1024px) {
+  #narihome_container {
+      grid-template-rows: 80px 600px 1fr 1fr; 
+  }
 
+  .ctn-productos {
+      width: 90%; 
+  }
 
+  .productNari {
+      margin: 10px; 
+  }
+}
 
+@media (max-width: 768px) {
+  .footer-content {
+      flex-direction: column;
+      align-items: center; 
+  }
+
+  .footer-contact {
+      margin: 10px; 
+  }
+
+  .productNari {
+      width: calc(50% - 20px); 
+  }
+
+  .price {
+      font-size: 1.1rem; 
+  }
+}
+
+@media (max-width: 480px) {
+  .productNari {
+      width: calc(100% - 20px); 
+  }
+
+  .carousel-caption h5 {
+      font-size: 1.5rem; 
+  }
+
+  .carousel-caption p {
+      font-size: 1rem; 
+  }
+
+  .footer-contact input,
+  .footer-contact textarea {
+      font-size: 12px; 
+  }
+}
